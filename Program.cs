@@ -34,7 +34,7 @@ namespace QuickSort
         static void Main(string[] args)
         {
             Random rand = new Random();
-            int[] tosort = new int[10000000];
+            int[] tosort = new int[100000];
             for (int i = 0; i < tosort.Length; i++)
             {
                 tosort[i] = rand.Next(0, 500000); //populates an array of 10000 random ints

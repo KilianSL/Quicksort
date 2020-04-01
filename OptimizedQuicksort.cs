@@ -18,6 +18,12 @@ namespace QuickSort
                 // pi is the partition index i.e. the point on which the array pivots
                 int pi = partition(ref arr, lo, hi); //Passes array by reference: less memory overhead
 
+                //foreach (var item in arr)
+                //{
+                //    Console.Write($"{item}, ");
+                //}
+                //Console.WriteLine();
+
                 Task loSort = Task.Run(() => sortRecursive(arr, lo, pi - 1));
                 Task hiSort = Task.Run(() => sortRecursive(arr, pi + 1, hi));  // Takes a new thread from the pool for each recursive sort operation. I dont really understand why this works. 
 
