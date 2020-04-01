@@ -34,15 +34,16 @@ namespace QuickSort
         static void Main(string[] args)
         {
             Random rand = new Random();
-            int[] tosort = new int[10000];
+            int[] tosort = new int[10000000];
             for (int i = 0; i < tosort.Length; i++)
             {
-                tosort[i] = rand.Next(0, 50000); //populates an array of 10000 random ints
+                tosort[i] = rand.Next(0, 500000); //populates an array of 10000 random ints
             }
 
             var timer = new System.Diagnostics.Stopwatch();
             var sorters = new System.Collections.Generic.List<sorter>();
-            sorters.Add(new quicksort());
+            sorters.Add(new BasicRecursiveQuicksort());
+            sorters.Add(new OptimizedQuicksort());
 
             foreach (var s in sorters)
             {
